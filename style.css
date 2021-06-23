@@ -1,5 +1,51 @@
-.grid {
-/*    padding-top: 40px;*/
+#header {
+    grid-area: header; /*задаём переменные */
+}
+
+#menu {
+    grid-area: menu;
+}
+
+#main {
+    grid-area: main; 
+}
+
+#right {
+    grid-area: right;
+}
+
+#footer {
+    grid-area: footer;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:    "header header header" /* on présise où se trouve des elements dans le conteneur et comniens de colonnes ils occupent*/
+                            "menu main right"      /* en voilà on précise où les variables se trouvent */
+                            "menu footer footer";               /*point-vergule seulement à la fin"    */
+    background-color: red;
+    grid-gap: 5px;
+    padding: 5px;
+    }
+
+.container > div {
+        background-color: #FAC8C8;
+        text-align: center;         /*précise le style pour chaqune élement enfant */
+        font-size: 20px;
+        padding: 20px;
+    }
+
+@media screen and (max-width: 640px) {
+    .container {
+        grid-template-areas:    "header"
+                                "menu"
+                                "main"
+                                "right"
+                                "footer";
+}
+}
+/* .grid {
+ padding-top: 40px;
     margin: 0 auto;
     display: grid;
     min-width: 640px;
@@ -10,7 +56,7 @@
 #ar1{
 background-color: rgb(194, 148, 148);
 border-color: red;
-border-bottom: 3px ;
+border-bottom: 3px;
 grid-column-start: 1;
 grid-column-end: 4;
 grid-row-start: 1;
@@ -29,10 +75,18 @@ text-align: center;
 }
 #ar3{
 text-align: center;
+background-color: rgb(194, 148, 148);
+border-color: red;
 }
 #ar4{
 text-align: center;
+background-color: rgb(194, 148, 148);
+border-color: red;
 }
 #ar5{
 text-align: center;
-}
+background-color: rgb(194, 148, 148);
+border-color: red;
+grid-column-start:2;
+grid-column-end: 4;
+} */
